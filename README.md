@@ -1,5 +1,20 @@
 # Legacy API Testing Portfolio
 
+## QA ownership and AI-generated implementation
+
+This portfolio reflects my QA work, business-workflow context, test-scope direction,
+execution and review of results against requirements. I guided the automation
+approach and used AI tools to generate the code implementation; I did not
+independently write the Python code or implement the framework from scratch.
+
+The code is evidence of an AI-assisted QA workflow, not a claim of independently
+assessed Python programming or software-engineering proficiency. Scenario proposals,
+technical analysis and documentation also used AI assistance. Only the executed
+checks and documented evidence support the stated validation scope.
+
+The legacy Postman workflow reflects professional QA work at Taba; the Python portfolio implementation was generated with AI assistance.
+
+
 This is a public QA/SDET portfolio project built from a legacy Postman
 collection. It is not a production application and it is not presented as a
 currently runnable integration environment.
