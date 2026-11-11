@@ -1,0 +1,47 @@
+name: API tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"
+
+jobs:
+  offline-checks:
+    name: Collection structure (offline)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install tools
+        run: python -m pip install pytest ruff
+      - name: Lint
+        run: ruff check .
+      - name: Run structure checks
+        run: pytest -v
+
+  newman-live:
+    name: Newman against the public Restful Booker service
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Newman
+        run: npm install --global newman@6.2.1
+      - name: Run the collection
+        run: |
+          mkdir -p reports
+          newman run postman/restful-booker-api.postman_collection.json \
+            -e postman/restful-booker.postman_environment.json \
+            -r cli,junit --reporter-junit-export reports/newman-junit.xml
+      - name: Upload the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: newman-report
+          path: reports/

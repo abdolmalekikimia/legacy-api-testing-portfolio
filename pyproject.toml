@@ -1,0 +1,16 @@
+[project]
+name = "restful-booker-api-tests"
+version = "1.0.0"
+description = "Postman/Newman API test collection for the public Restful Booker service, with CI"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
