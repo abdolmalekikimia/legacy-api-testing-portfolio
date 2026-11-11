@@ -1,4 +1,6 @@
-# Restful Booker API Tests (Postman / Newman)
+# legacy-api-testing-portfolio
+
+Postman / Newman API tests for the public Restful Booker service.
 
 [![API tests](https://github.com/abdolmalekikimia/legacy-api-testing-portfolio/actions/workflows/api-tests.yml/badge.svg)](https://github.com/abdolmalekikimia/legacy-api-testing-portfolio/actions/workflows/api-tests.yml)
 

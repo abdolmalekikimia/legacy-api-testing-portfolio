@@ -1,5 +1,5 @@
 [project]
-name = "restful-booker-api-tests"
+name = "legacy-api-testing-portfolio"
 version = "1.0.0"
 description = "Postman/Newman API test collection for the public Restful Booker service, with CI"
 requires-python = ">=3.10"
